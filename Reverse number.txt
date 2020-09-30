@@ -1,0 +1,28 @@
+					Reverse Number
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Reverse_number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, rem, rev = 0;
+            Console.WriteLine("enter a number");
+            i = int.Parse(Console.ReadLine());
+            while(i!=0)
+            {
+                rem = i % 10;
+                rev = rev * 10 + rem;
+                i /= 10;
+            }
+            Console.WriteLine("reverse number :" + rev);
+            Console.ReadKey();
+        }
+    }
+}

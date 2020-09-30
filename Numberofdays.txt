@@ -1,0 +1,42 @@
+								Number of days in a month
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace number_of_days_in_a_month
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month;
+            int year;
+            Console.WriteLine("enter the month");
+            month = Console.ReadLine();
+            Console.WriteLine("enter the year");
+            year = Convert.ToInt32(Console.ReadLine());
+            if(month=="january" || month=="march"||month=="may"||month=="july"||month=="august"||month=="october"||month=="december")
+            {
+                Console.WriteLine("Number of days are 31");
+            }
+            // else if(month=="february")
+           // {
+               // Console.WriteLine("number of days are 28");
+           // }
+            else if(month=="february" && year%4==0)
+            {
+                Console.WriteLine("number of days are 29");
+            }
+            else
+            {
+                Console.WriteLine("number of days are 30");
+            }
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,69 @@
+						NUMBER TO WORD
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Number_to_word
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n, i, sum = 0;
+            Console.Write("Enter the number");
+            n = int.Parse(Console.ReadLine());
+            while(n>0)
+            {
+                i = n % 10;
+                sum = sum * 10 + i;
+                n = n / 10;
+            }
+            n = sum;
+            while(n>0)
+            {
+                i = n % 10;
+                switch(i)
+                {
+                    case 1:
+                        Console.Write("one");
+                        break;
+                    case 2:
+                        Console.Write("two");
+                        break;
+                    case 3:
+                        Console.Write("three");
+                        break;
+                    case 4:
+                        Console.Write("four");
+                        break;
+                    case 5:
+                        Console.Write("five");
+                        break;
+                    case 6:
+                        Console.Write("six");
+                        break;
+                    case 7:
+                        Console.Write("seven");
+                        break;
+                    case 8:
+                        Console.Write("eight");
+                        break;
+                    case 9:
+                        Console.Write("nine");
+                        break;
+                    case 0:
+                        Console.Write("zero");
+                        break;
+                    default:
+                        break;
+                }
+                n = n / 10;
+            }
+            Console.ReadLine();
+        }
+    }
+}
