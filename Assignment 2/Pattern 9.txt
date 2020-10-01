@@ -1,0 +1,33 @@
+						Pattern 9
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pattern_9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, j, k, n;
+            Console.WriteLine("enter a number");
+            n = Convert.ToInt32(Console.ReadLine());
+            for(i = n; i>=1;i--)
+            {
+                for(j=1; j<=i;j++)
+                {
+                    Console.Write(j);
+                }
+                for(k=i-1;k>=1;k--)
+                {
+                    Console.Write(k);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+    }
+}

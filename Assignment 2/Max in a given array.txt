@@ -1,0 +1,30 @@
+								Max in a given array
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace largest_num_in_an_array
+{
+    class Program
+    {
+        static int[] arr = { 34, 22, 98, 178, 3542, 200 };
+        static int max()
+        {
+            int i;
+            int large = arr[0];
+            for (i = 1; i < arr.Length; i++)
+                if (arr[i] > large)
+                    large = arr[i];
+            return large;
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Max in given"  + "array is"  + max());
+            Console.ReadKey();
+        }
+    }
+}
