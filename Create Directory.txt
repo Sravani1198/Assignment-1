@@ -1,0 +1,29 @@
+    					Create Directory
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace CreateDirectory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*var currentDirectory = Directory.GetCurrentDirectory();
+            Console.WriteLine(currentDirectory);
+            Console.WriteLine(Directory.GetDirectoryRoot(currentDirectory));*/ //to find the current root directory
+
+            var documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var Directoryname = $@"{documentPath}\test";
+            DirectoryInfo Dinfo = Directory.CreateDirectory(Directoryname);
+            Console.WriteLine($"complete name of the directory:{Dinfo.FullName},Name:{Dinfo.Name},Parent:{Dinfo.Parent}");
+            Console.ReadKey();
+        }
+    }
+}

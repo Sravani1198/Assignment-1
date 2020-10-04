@@ -1,0 +1,27 @@
+using System;
+					Read From file
+
+
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ClassStreamReader
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream FS=new FileStream("C:\\Users\\S.Sravani Kumari\\Desktop\\sample1.txt",FileMode.OpenOrCreate);
+            StreamReader sr = new StreamReader(FS);  //instancing to the Stream Reader
+            string lines = sr.ReadLine(); // trying to read the lines from the existing file if present
+            Console.WriteLine(lines);
+            sr.Close(); // closing the Stream reader
+            FS.Close(); //closing the file on the specified location
+            Console.ReadKey();
+        }
+    }
+}
