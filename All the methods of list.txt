@@ -1,0 +1,55 @@
+						All the Methods of List
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CsharpList_All_Methods
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> lt = new List<int>();
+            //var list = new List<int>();
+            lt.Add(10);
+            lt.Add(20);
+            lt.Add(30);
+            lt.Add(40);
+            lt.Add(50);
+            Console.WriteLine("List Created");
+            foreach(var list in lt)
+            {
+                Console.WriteLine("The elements of List are: {0}", list);
+            }
+
+            //contains method
+            Console.WriteLine("The elements are present or not");
+            Console.WriteLine(lt.Contains(10));
+            Console.WriteLine(lt.Contains(60));
+
+            //Accessing the list elements by index
+            Console.WriteLine("The list of 1st index is : {0}", lt[0]);
+            Console.WriteLine("The list of 2nd index is : {0}", lt[1]);
+            Console.WriteLine("The list of 3rd index is : {0}", lt[2]);
+            Console.WriteLine("The list of 4th index is : {0}", lt[3]);
+            Console.WriteLine("The list of 5th index is : {0}", lt[4]);
+
+            //Insert(index,value)
+            lt.Insert(5, 70);
+            lt.Insert(6, 80);
+            Console.WriteLine("The list of 6th index is : {0}", lt[5]);
+            Console.WriteLine("The list of 7th index is : {0}", lt[6]);
+
+            //Remove method
+            Console.WriteLine("Checking for remove method");
+            Console.WriteLine(lt.Remove(70));
+            Console.WriteLine(lt.Remove(80));
+
+            Console.ReadKey();
+        }
+    }
+}

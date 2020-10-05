@@ -1,0 +1,161 @@
+				Stack Integer All methods
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Stack_integer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> Mystack = new Stack<int>(); // creating an object for stack
+            Mystack.Push(2);
+            Mystack.Push(4);
+            Mystack.Push(6);
+            Mystack.Push(8);
+            Mystack.Push(10);
+            Mystack.Push(12);
+            Mystack.Push(14);
+            Mystack.Push(16);
+            Mystack.Push(18);
+            Mystack.Push(20);
+
+           foreach(int stack in Mystack)
+            {
+                Console.WriteLine("The elements of Mystack are:" + stack);
+            }
+            Console.WriteLine(Mystack.ElementAt(0)); //access Mystack value using index
+            Console.WriteLine(Mystack.Contains(5)); // check the data in the Mystack
+            Console.WriteLine(Mystack.Contains(20));  // check the data in the Mystack
+
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop()); //deletes the element in the stack
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("the elements of my stack are:" + stack);
+            }
+            Console.WriteLine("the elements after applying pop is:" + Mystack.Count()); //counts the data present in the Mystack
+
+
+            Mystack.Push(2);
+            Mystack.Push(4);
+            Mystack.Push(6);
+            Mystack.Push(8);
+            Mystack.Push(10);
+            Mystack.Push(12);
+            Mystack.Push(14);
+            Mystack.Push(16);
+    
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("The elements of Mystack are:" + stack);
+            }
+            Console.WriteLine(Mystack.ElementAt(0)); //access Mystack value using index
+            Console.WriteLine(Mystack.Contains(5)); // check the data in the Mystack
+            Console.WriteLine(Mystack.Contains(20));  // check the data in the Mystack
+
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop()); //deletes the element in the stack
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("the elements of my stack are:" + stack);
+            }
+            Console.WriteLine("the elements after applying pop is:" + Mystack.Count()); //counts the data present in the Mystack
+
+
+            Mystack.Push(2);
+            Mystack.Push(4);
+            Mystack.Push(6);
+            Mystack.Push(8);
+            Mystack.Push(10);
+            Mystack.Push(12);
+            
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("The elements of Mystack are:" + stack);
+            }
+            Console.WriteLine(Mystack.ElementAt(0)); //access Mystack value using index
+            Console.WriteLine(Mystack.Contains(5)); // check the data in the Mystack
+            Console.WriteLine(Mystack.Contains(20));  // check the data in the Mystack
+
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop()); //deletes the element in the stack
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("the elements of my stack are:" + stack);
+            }
+            Console.WriteLine("the elements after applying pop is:" + Mystack.Count()); //counts the data present in the Mystack
+
+
+            Mystack.Push(2);
+            Mystack.Push(4);
+            Mystack.Push(6);
+            Mystack.Push(8);
+            Mystack.Push(10);
+            Mystack.Push(16);
+            Mystack.Push(18);
+            Mystack.Push(20);
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("The elements of Mystack are:" + stack);
+            }
+            Console.WriteLine(Mystack.ElementAt(0)); //access Mystack value using index
+            Console.WriteLine(Mystack.Contains(5)); // check the data in the Mystack
+            Console.WriteLine(Mystack.Contains(20));  // check the data in the Mystack
+
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop()); //deletes the element in the stack
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("the elements of my stack are:" + stack);
+            }
+            Console.WriteLine("the elements after applying pop is:" + Mystack.Count()); //counts the data present in the Mystack
+
+
+            Mystack.Push(2);
+            Mystack.Push(4);
+            Mystack.Push(6);
+            Mystack.Push(8);
+            Mystack.Push(10);
+           
+            foreach (int stack in Mystack)
+            {
+                Console.WriteLine("The elements of Mystack are:" + stack);
+            }
+            Console.WriteLine(Mystack.ElementAt(0)); //access Mystack value using index
+            Console.WriteLine(Mystack.Contains(5)); // check the data in the Mystack
+            Console.WriteLine(Mystack.Contains(20));  // check the data in the Mystack
+
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop()); //deletes the element in the stack
+            Console.WriteLine("The elements after applying pop:" + Mystack.Pop());
+
+
+
+            Console.WriteLine("The Peek element of the stack is:" + Mystack.Peek()); //To find the topmost element of the stack
+            Console.WriteLine("The element left in Mystack after pop operation:" + Mystack.Count);
+           
+            foreach(int stack in Mystack )
+            {
+                Console.WriteLine("the elements of my stack are:" + stack);
+            }
+            Console.WriteLine("the elements after applying pop is:" + Mystack.Count()); //counts the data present in the Mystack
+
+            Console.ReadKey();
+        }
+    }
+}
