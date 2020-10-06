@@ -1,0 +1,58 @@
+					C sharp Generic Constraints
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace Csharp_Generic_Constraints
+{
+    //creation of generic class with the type parameter and assign a constructor Idisposable
+    class Ruby<T> where T : IDisposable
+    {
+        public void test1()
+        {
+            Console.WriteLine("Its an example of data constraints with IDisposable");
+        }
+    }
+    //creation of generic class with the Type parameter and assign the constructor as struct
+    class C<T> where T : struct
+    {
+        public void test2()
+        {
+            Console.WriteLine("Its an example of data constraints with structure");
+        }
+    }
+    //Reference Type with parameterized constructor
+    class read<V> where V : class, new() //new is a constructor being created
+    {
+        public void test3()
+        {
+            Console.WriteLine("Its an example of data constraints with class program");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Ruby<DataTable> ruby = new Ruby<DataTable>(); //To store the data with class ruby
+            C<int> java = new C<int>();
+            read<Program> test = new read<Program>();
+            ruby.test1();
+            java.test2();
+            test.test3();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+
+
+
+

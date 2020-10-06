@@ -1,0 +1,38 @@
+				REGEX ISMATCH METHOD
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_10
+{
+    class Program
+    {
+        
+         //<summary>
+         // test string using Regex.IsMatch static method
+         //</summary>
+        static bool IsValid(string value)
+
+        {
+            return Regex.IsMatch(value, @"^[a-zA-Z0-9]*$");
+        }
+        static void Main()
+        {
+            //test the string with the Isvalid method
+            Console.WriteLine(IsValid("dotnetperls0123"));
+            Console.WriteLine(IsValid("DotNetPerls"));
+            Console.WriteLine(IsValid(":-)"));
+            Console.WriteLine(IsValid("SRAVANI9876"));
+            Console.WriteLine(IsValid("!()#+-_@%;:,./[]`~|{}"));
+            Console.WriteLine(IsValid(":-)"));
+            //console.writeline(Isvalid(null)); //Throws an exception
+            Console.ReadKey();
+        }
+        
+        
+    }
+}

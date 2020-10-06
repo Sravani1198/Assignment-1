@@ -1,0 +1,64 @@
+					GENERIC CLASS
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace C_sharp_Generic_class
+{
+    class sleeping<T>
+    {
+        T bored;
+        public sleeping(T sravani)
+        {
+            this.bored = sravani;
+        }
+        public void be_active()
+        {
+            Console.WriteLine("Class is getting bored");
+        }
+    }
+    class example<T> //Type parameter <T>
+    {
+        T data; //Type parameter declared
+        //A method for class example
+        public example(T check)  //check is been assigned to type parameter
+        {
+            this.data = check;
+        }
+        public void Write()
+        {
+            Console.WriteLine("The data passed to the initializer is : " + this.data);
+        }
+    }
+
+    //Driver mode/Main method
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Use the generic type example with an integer/String type parameter
+            //Instantiating the class example
+            example<int> result = new example<int>(100);
+            example<string> result1 = new example<string>("SRAVANI");
+            sleeping<string> docker = new sleeping<string>("since lot of food");
+            sleeping<int> docker1 = new sleeping<int>(500);
+            example<string> result2 = new example<string>("Programming is fun");
+
+            //Invoking the method Write() with object created result,result1,result2
+            result.Write();
+            result1.Write();
+            result2.Write();
+            docker.be_active();
+            docker1.be_active();
+            Console.ReadKey();
+        }
+    }
+}
+        
+    
+

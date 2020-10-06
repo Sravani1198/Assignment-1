@@ -1,0 +1,32 @@
+				REGEXOPTIONS.IGNORECASE
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const string value = "TEST";
+            //... This ignores the case of the "TE" characters
+            if(Regex.IsMatch(value,"te..",RegexOptions.IgnoreCase))
+            {
+                Console.WriteLine(true);
+            }
+            const string val = "SIMULATION";
+            //... This ignores the case of the "MUL" characters
+            if (Regex.IsMatch(val, "mul..", RegexOptions.IgnoreCase))
+            {
+                Console.WriteLine(true);
+            }
+            Console.ReadKey();
+        }
+    }
+}
