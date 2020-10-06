@@ -1,0 +1,46 @@
+				STATIC REGEX
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // the input string again
+            string input = "/content/windows-7.aspx";
+            //this calls the static method specified
+            Console.WriteLine(RegexUtil.MatchKey(input));
+            Console.ReadKey();
+        }
+    }
+    static class RegexUtil
+    {
+        static Regex _regex = new Regex(@"/content/([a-z0-9\-]+)\.aspx$");
+        //<summary>
+        //this returns the key that is matched within the input
+        // </summary>
+        static public string MatchKey(string input)
+        {
+            Match match = _regex.Match(input.ToLower());
+            if(match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else
+            {
+                return null;
+            }
+           
+        }
+    }
+  
+}

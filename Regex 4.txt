@@ -1,0 +1,46 @@
+				NEXTMATCH REGEX
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string value = "4 and 5";
+            //step 1: get first match
+            Match match = Regex.Match(value, @"\d");
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+            //step 2: get second match
+            match = match.NextMatch();
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+            string val = "7 and 1";
+            //step 1: get first match
+            Match mch = Regex.Match(val, @"\d");
+            if (mch.Success)
+            {
+                Console.WriteLine(mch.Value);
+            }
+            //step 2: get second match
+            mch = mch.NextMatch();
+            if (match.Success)
+            {
+                Console.WriteLine(mch.Value);
+            }
+            Console.ReadKey();
+        }
+    }
+}

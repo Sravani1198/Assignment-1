@@ -1,0 +1,42 @@
+				START AND END MATCHES OF REGEX
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string test = "xxyy";
+            //match the start of a string
+            if(Regex.IsMatch(test,"^xx"))
+            {
+                Console.WriteLine("START MATCHES");
+            }
+            //match the end of a string
+            if(Regex.IsMatch(test,"yy$"))
+            {
+                Console.WriteLine("END MATCHES");
+            }
+            string s = "ssrr";
+            //match the start of a string
+            if (Regex.IsMatch(s, "^ss"))
+            {
+                Console.WriteLine("START MATCHES SS");
+            }
+            //match the end of a string
+            if (Regex.IsMatch(s, "rr$"))
+            {
+                Console.WriteLine("END MATCHES RR");
+            }
+            Console.ReadKey();
+        }
+    }
+}

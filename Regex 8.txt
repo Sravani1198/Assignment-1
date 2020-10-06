@@ -1,0 +1,36 @@
+					REGEX PARSE
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Regex_8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "Dot Net 100 Perls";
+            Match match = Regex.Match(input, @"\d+");
+            if(match.Success)
+            {
+                int.TryParse(match.Value, out int number);
+                //show that we have the numbers
+                Console.WriteLine("NUMBERS: {0},{1}", number, number + 1);
+            }
+            string s = "Dot Net 700 Perls";
+            Match mch = Regex.Match(s, @"\d+");
+            if (mch.Success)
+            {
+                int.TryParse(mch.Value, out int number);
+                //show that we have the numbers
+                Console.WriteLine("NUMBERS: {0},{1}", number, number + 1);
+            }
+            Console.ReadKey();
+        }
+    }
+}

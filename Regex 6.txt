@@ -1,0 +1,45 @@
+					NON GREEDY REGEX
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+namespace Regex_6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string test = "/bird/cat/";
+            //Version 1: use lazy (or non-greedy) metacharacter
+            var result1 = Regex.Match(test, "^/.*?/");
+            if(result1.Success)
+            {
+                Console.WriteLine("NON GREEDY: {0}", result1.Value);
+            }
+            //version 2: default regex
+            var result2 = Regex.Match(test, "^/.*/");
+            if(result2.Success)
+            {
+                Console.WriteLine("GREEDY: {0}", result2.Value);
+            }
+            string test1 = "/animal/dog/";
+            //Version 1: use lazy (or non-greedy) metacharacter
+            var result3 = Regex.Match(test1, "^/.*?/");
+            if (result3.Success)
+            {
+                Console.WriteLine("NON GREEDY: {0}", result3.Value);
+            }
+            //version 2: default regex
+            var result4 = Regex.Match(test1, "^/.*/");
+            if (result4.Success)
+            {
+                Console.WriteLine("GREEDY: {0}", result4.Value);
+            }
+            Console.ReadKey();
+        }
+    }
+}
