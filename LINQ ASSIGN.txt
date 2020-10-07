@@ -1,0 +1,91 @@
+				LINQ ASSIGNMENT
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharp_Linq
+{
+    public class Employee
+    {
+        public int empID { get; set; }
+        public string empName { get; set; }
+        public int empSalary  { get; set; }
+        public string empDesignation { get; set; }
+    }
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            //Implement the linq on collections-LIST example
+            List<Employee> emplist = new List<Employee>
+            {
+                new Employee(){empID=101,empName="sravani",empSalary=20000,empDesignation= "projectleader"},
+                new Employee(){empID=102,empName="firdos",empSalary=15000,empDesignation= "data analyst"},
+                new Employee(){empID=103,empName="ramya",empSalary=25000,empDesignation= "manager"},
+                new Employee(){empID=104,empName="prathyusha",empSalary=20000,empDesignation= "Technical Trainer"},
+
+            };
+            //Applying linq logic similar to sql
+            var empName = emplist.Where(s => s.empSalary > 18000).Select(s => s).Where(st => st.empID > 101).Select(s => s.empName);
+            var empName1 = emplist.Where(s => s.empSalary <= 25000).Select(s => s).Where(st => st.empID == 104).Select(s => s.empName);
+            var empName2 = emplist.Where(s => s.empSalary >= 18000).Select(s => s).Where(st => st.empID < 102).Select(s => s.empName);
+            var empName3 = emplist.Where(s => s.empSalary <= 25000).Select(s => s).Where(st => st.empID == 104).Select(s => s.empName);
+            var empName4= emplist.Where(s => s.empSalary > 20000).Select(s => s).Where(st => st.empID < 103).Select(s => s.empName);
+            var empName5 = emplist.Where(s => s.empSalary <= 25000).Select(s => s).Where(st => st.empID == 103).Select(s => s.empName);
+            var empName6= emplist.Where(s => s.empSalary < 18000).Select(s => s).Where(st => st.empID > 101).Select(s => s.empName);
+            var empName7 = emplist.Where(s => s.empSalary > 19000).Select(s => s).Where(st => st.empID > 102).Select(s => s.empName);
+            var empName8 = emplist.Where(s => s.empSalary == 25000).Select(s => s).Where(st => st.empID == 103).Select(s => s.empName);
+            var empName9 = emplist.Where(s => s.empSalary < 25000).Select(s => s).Where(st => st.empID > 101).Select(s => s.empName);
+            var youngestempName = from s in emplist where (s.empSalary > 12000 && s.empSalary < 24000) select new { empName = s.empName };
+            youngestempName.ToList().ForEach(s => Console.WriteLine(s.empName)); //stored information converted to list
+            foreach (var x in empName)
+            {
+                Console.WriteLine(x);
+            }
+            foreach (var y in empName1)
+            {
+                Console.WriteLine(y);
+            }
+            foreach (var a in empName2)
+            {
+                Console.WriteLine(a);
+            }
+            foreach (var b in empName3)
+            {
+                Console.WriteLine(b);
+            }
+            foreach (var c in empName4)
+            {
+                Console.WriteLine(c);
+            }
+            foreach (var d in empName5)
+            {
+                Console.WriteLine(d);
+            }
+            foreach (var e in empName6)
+            {
+                Console.WriteLine(e);
+            }
+            foreach (var f in empName7)
+            {
+                Console.WriteLine(f);
+            }
+            foreach (var g in empName8)
+            {
+                Console.WriteLine(g);
+            }
+            foreach (var i in empName9)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
