@@ -1,0 +1,56 @@
+				DELEGATE ASSIGN2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Delegate_Assign2
+{
+    public delegate void Delegate1(string info); //declaring a delegate
+    public delegate void Delegate2(int a, int b);
+
+
+    class example1
+    { 
+        //set target method
+        //target method
+        static void Method1(string information)
+        {
+            Console.WriteLine(information);
+        }
+        public static void difference(int a, int b)
+        {
+            Console.WriteLine("The difference of the values are" + (a - b));
+        }
+    
+        static void Main(string[] args)
+        {
+            //one way to instantiate a delegate
+            Delegate1 d1 = new Delegate1(Method1);
+            d1("sravani");
+            //another way to instantiate the delegate
+            Delegate1 d2 = Method1;
+            d2("chandhini");
+            //instantiating an element without writing a method by setting a lamda expression
+            Delegate1 d3 = (string info) => Console.WriteLine(info);
+            d3("divya");
+
+            Console.WriteLine();
+            Console.WriteLine("example of delegate");
+            example1 e1 = new example1();
+            //invoking a method as a parameter
+            Delegate2 D2 = new Delegate2(difference);
+            //invoking the values
+            D2.Invoke(9, 5); //one way of invoking
+            D2(9, 5); //another way of invoking both returns the same output
+            Delegate2 D3 = difference;
+            D3(10, 8);
+            Delegate2 D4 = (int i, int j) => Console.WriteLine(i * j);
+            D4(5, 3);
+            Console.ReadKey();
+        }
+    }
+}

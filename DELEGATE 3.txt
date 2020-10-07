@@ -1,0 +1,75 @@
+					DELEGATE 3
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Delegate_3
+{
+    public delegate void Delegate1(string msg);
+    public delegate void Delegate2(int x);
+    public delegate void Delegate3(int a, int b);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Delegate1 d1 = ClassA.Method1;
+            InvokeDelegate(d1);
+            d1 = ClassB.Method2;
+            InvokeDelegate(d1);
+
+            d1 = (string msg) => Console.WriteLine("Call Lambda Expression: " + msg);
+            InvokeDelegate(d1);
+            Console.WriteLine();
+            Console.WriteLine("example 3 of delegate3");
+
+            display1 dp = new display1();
+            Delegate2 D2 = new Delegate2(dp.disp1);
+            D2(7);
+            Delegate3 D3 = new Delegate3(display2.disp2);
+            D3(6, 9);
+            D3 = (int a, int b) => Console.WriteLine(" The sum by using lambda expression :" + (a + b));
+            D3.Invoke(6, 5);
+            Console.ReadKey();
+        }
+
+        static void InvokeDelegate(Delegate1 d1) //Delegate1 type parameter
+        {
+            d1("Hello World!");
+        }
+    }
+    class ClassA
+    {
+        public static void Method1(string message)
+        {
+            Console.WriteLine("called ClassA.Method1() with parameter :" + message);
+        }
+    }
+    class ClassB
+    {
+        public static void Method2(string message)
+        {
+            Console.WriteLine("called ClassB.Method2() with parameter: " + message);
+        }
+    }
+    class display1
+    {
+        public void disp1(int x)
+        {
+            for (int i = 0; i <= 5; i++)
+                Console.WriteLine("The natural numbers to be displayed upto 5 is:" + i);
+        }
+    }
+        class display2
+        {
+            public static void disp2(int a, int b)
+            {
+                Console.WriteLine("print the numbers" + a + " " + b);
+            }
+        }
+    
+}
+
