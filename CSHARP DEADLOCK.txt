@@ -1,0 +1,69 @@
+					C SHARP DEADLOCK
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace CsharpDeadlock
+{
+    public class Deadlocks
+    {
+        static readonly object firstlock = new object();
+        static readonly object secondlock = new object();
+        static void Thread1()
+        {
+            Console.WriteLine("Firstlock is getting locked");
+            lock (firstlock)
+            {
+                Console.WriteLine("Firstlock is locked");
+
+                //Wait until the first thread had grabbed the second lock
+                Thread.Sleep(1000);
+                Console.WriteLine("Secondlock is getting locked");
+                lock (secondlock)
+                {
+                    Console.WriteLine("Locked secondlock");
+                }
+                Console.WriteLine("released second lock");
+            }
+            Console.WriteLine("released first lock");
+        }
+        class deadlock
+        {
+            static void Main(string[] args)
+            {
+                new Thread(new ThreadStart(Thread1)).Start();
+
+                //Wait until the other thread has grabbed firstlock
+                Thread.Sleep(1000);
+                Console.WriteLine("Secondlock is getting locked");
+                lock (secondlock)
+                {
+                    Console.WriteLine("Locked secondlock");
+                    Console.WriteLine("Firstlock is locked");
+                    lock (firstlock)
+                    {
+                        Console.WriteLine("Firstlock is locked");
+
+                    }
+                    Console.WriteLine("released first lock");
+                }
+                Console.WriteLine("released second lock");
+                Console.ReadLine();
+            }
+        }
+    }
+}
+            
+        
+
+        
+    
+    
+        
+    
+

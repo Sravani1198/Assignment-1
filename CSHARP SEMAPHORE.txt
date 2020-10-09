@@ -1,0 +1,43 @@
+					C SHARP SEMAPHORE
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace C_sharp_semaphore
+{
+    class Program
+    {
+         public static Semaphore semaphore = new Semaphore(1, 2);
+        static void Main(string[] args)
+        {
+            for(int i=1; i<10; i++)
+            {
+                Thread obj = new Thread(sphore)
+                {
+                    Name = "Thread" + i
+                };
+                obj.Start(i);
+            }
+            Console.ReadLine();
+        }
+        static void sphore(object id)
+        {
+            Console.WriteLine(Thread.CurrentThread.Name + " enter for processing");
+
+            //blocks the current thread until the current wait handle receives a signal
+            semaphore.WaitOne();
+            Console.WriteLine("success!" + Thread.CurrentThread.Name + " is working");
+            Thread.Sleep(2000);
+            Console.WriteLine(Thread.CurrentThread.Name + " exit");
+
+            //release method to release the semaphore
+            semaphore.Release();
+        }
+    }
+}
