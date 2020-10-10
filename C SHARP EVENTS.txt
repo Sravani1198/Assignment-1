@@ -1,0 +1,45 @@
+					C SHARP EVENTS
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace @event
+{
+    public delegate void od_OddNumber(); //Declared Delegate
+    class event1
+    {
+        //This is Subscriber Class
+   
+        static void Main(string[] args)
+        {
+            OddNumbers on = new OddNumbers();
+            //event gets binded with delegates or registered  with delegate
+            on.ev_OddNumber += EventMessage;
+            on.Odd();
+            Console.ReadLine();
+        }
+        //Delegates calls this method when event is released
+        static void EventMessage()
+        {
+            Console.WriteLine("**************Event Executed : This is Odd Number ****************");
+        }
+    }
+    //This is Publisher Class
+    class OddNumbers
+    {
+        public event od_OddNumber ev_OddNumber;  //Declared Events
+
+        public void Odd()
+        {
+            //Check if result is odd number then raise event
+            if(ev_OddNumber != null)
+            {
+                ev_OddNumber(); //Raised event
+            }
+        }
+    }
+}
