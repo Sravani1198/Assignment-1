@@ -1,0 +1,55 @@
+					C SHARP LOCK IN MULTITHREADING
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace C_sharp_lock_method
+{
+    class LockThread
+    {
+        public void display()
+        {
+            lock (this) //lock method
+            {
+
+                Console.WriteLine("Csharp is an");
+                Thread.Sleep(5000);
+                Console.WriteLine("Object oriented Programming Language");
+                Console.WriteLine();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+
+            LockThread obj = new LockThread();
+            //Instantiated the thread with method reference
+            Thread t1 = new Thread(obj.display);
+            Thread t2 = new Thread(obj.display);
+            Thread t3 = new Thread(obj.display);
+            Thread t4 = new Thread(obj.display);
+            Thread t5 = new Thread(obj.display);
+
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            t4.Start();
+            t5.Start();
+            //bj.display();
+            Console.ReadLine();
+        }
+    }
+}
+
+ 
+ 
+
+
+
+
