@@ -1,0 +1,46 @@
+				C SHARP PRIORITIES
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace C_sharp_priorities
+{
+    class Program
+    {
+        static long count1, count2;
+        public static void incrementcount1()
+        {
+            while (true)  //Indefinite loop
+                count1 += 1;
+        }
+        public static void incrementcount2()
+        {
+            while (true)  //Indefinite loop
+                count2 += 1;
+        }
+        static void Main(string[] args)
+        {
+            Thread t1 = new Thread(incrementcount1);  //Invoke the method increment count1
+            Thread t2 = new Thread(incrementcount2);  //Invoke the method increment count2
+            Console.WriteLine("Main thread going to sleep for 10 seconds");
+            Thread.Sleep(10000);
+            Console.WriteLine("Main thread wokeup");
+
+            t1.Priority = ThreadPriority.Normal; //lowest - cpu utilization is lowest, time taken is least
+            t2.Priority = ThreadPriority.Normal; //highest -it is the time allocated to thread and method involved
+            t1.Start(); t2.Start(); 
+            t1.Abort(); t2.Abort();
+            t1.Join(); t2.Join();  //If we have used join method, then main method will have highest priority considered
+
+            Console.WriteLine("Count1 is Normal:" + count1);
+            Console.WriteLine("count2 is Normal:" + count2);
+
+            Console.ReadLine();
+        }
+    }
+}

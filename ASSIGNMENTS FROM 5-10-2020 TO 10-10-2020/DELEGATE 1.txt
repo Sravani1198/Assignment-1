@@ -1,0 +1,33 @@
+				Linq1 Assign
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Linq_Assign1
+{
+    public delegate T sum<T>(T add1, T add2, T add3); //generic delegate
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            sum<int> add = Sum;
+            Console.WriteLine(add(987, 234, 34));
+
+            sum<string> concat = Concat;
+            Console.WriteLine(concat("The", "Day is", "Beautiful"));
+            Console.ReadKey();
+        }
+        public static int Sum(int v1, int v2, int v3)
+        {
+            return v1 + v2 + v3;
+        }
+        public static string Concat(string s1, string s2, string s3)
+        {
+            return s1 + s2 + s3;
+        }
+    }
+}

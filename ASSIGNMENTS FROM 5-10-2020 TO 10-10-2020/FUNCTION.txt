@@ -1,0 +1,65 @@
+				
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Func_Ass4
+{
+    public delegate void showDelegate(string str);
+    public delegate void squareDelegate(float x);
+    public delegate int diffnumsDelegate(int a, int b, int c);
+    public delegate double mulnumsDelegate(int i, double j);
+    public delegate bool checkDelegate(string str);
+    public delegate bool check1Delegate(int s);
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Func<int, int, int, int> dd = (x, y, z) => x - y - z;
+            
+            int t = dd(10, 5, 4);
+            Console.WriteLine(t);
+            Func<int, double, double> md = (i, j) => i * j;
+            double d = md(5, 176.34);
+            Console.WriteLine(d);
+            Action<float> sd = (x) =>
+            {
+                int n = 5;
+
+                for (int i = 0; i <= n; i++)
+                {
+                    Console.WriteLine(x * i);
+                }
+                Console.WriteLine("square of the input is:");
+                Console.WriteLine(x * x);
+            };
+            sd(3.27f);
+            Action<string> ds = (str) => Console.WriteLine("hai " + str + " night");
+            ds("good");
+            Predicate<string> cd = (str) =>
+            {
+                if (str.Length == 7)
+                    return true;
+                else
+                    return false;
+            };
+            bool b = cd("sravani");
+            Console.WriteLine(b);
+            Predicate<int> c1 = (s) =>
+            {
+                if (s >= 70)
+                    return true;
+                else
+                    return false;
+            };
+            bool g = c1(77);
+            Console.WriteLine(g);
+            Console.ReadLine();
+        }
+
+    }
+}

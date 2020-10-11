@@ -1,0 +1,60 @@
+				INNER JOIN IN LINQ
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace  Inner_Join_Linq
+{
+    public class employee1
+    {
+        public int empID { get; set; }
+        public string empname { get; set; }
+        public int empsalary { get; set; }
+        public string empdesignation { get; set; }
+    }
+    class employee
+    {
+        static void Main(string[] args)
+        {
+            List<employee1> emplist = new List<employee1>()
+            {
+                new employee1() { empID = 1, empname = "firdos", empsalary = 25000, empdesignation = "project manager" },
+                new employee1() { empID = 2, empname = "sravani", empsalary = 22000, empdesignation = "team leader" },
+                new employee1() { empID = 3, empname = "ramya", empsalary = 15000, empdesignation = "analyst" },
+                new employee1() { empID = 4, empname = "prathyusha", empsalary = 30000, empdesignation = "manager" },
+             };
+
+            List<employee1> emplist2 = new List<employee1>()
+            {
+                new employee1() { empID = 1, empname = "firdos", empsalary = 20000, empdesignation = "project manager" },
+                new employee1() { empID = 2, empname = "sravani", empsalary = 22000, empdesignation = "team leader" },
+                new employee1() { empID = 3, empname = "ramya", empsalary = 25000, empdesignation = "analyst" },
+                new employee1() { empID = 4, empname = "prathyusha",empsalary = 20000, empdesignation = "manager" },
+             };
+            var innerJoinQuery = from e1 in emplist
+                                 join e2 in emplist2
+                                 on e1.empID equals e2.empID
+                                 select new
+                                 { EmployeeName = e1.empname, EmployeeDesignation = e2.empdesignation };
+
+
+
+            foreach (var x in innerJoinQuery)
+
+            {
+                Console.WriteLine("Employee {0} designation  {1}", x.EmployeeName, x.EmployeeDesignation);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+

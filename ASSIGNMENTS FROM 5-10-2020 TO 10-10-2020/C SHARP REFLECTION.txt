@@ -1,0 +1,45 @@
+					REFLECTION
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+
+namespace C_sharp_Reflection
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Type T = typeof(int);  //Initializing the T as typeof string.(type--> data type)
+            //use of reflections as below
+            //I trying to find out what sort the data related to T
+            Console.WriteLine("Name:{0}",T.Name);  //What type of data, method and fields
+            Console.WriteLine("FullName:{0}", T.FullName);  //What type of data, method and fields
+            Console.WriteLine("Namespace:{0}", T.Namespace); //What type of data, method and fields
+            Console.WriteLine("BaseType:{0}", T.BaseType);  //What type of data, method and fields
+
+
+            Type S = typeof(string);  //Initializing the S as typeof string.(type--> data type)
+            //use of reflections as below
+            //I trying to find out what sort the data related to S
+            Console.WriteLine("Name:{0}", S.Name);  //What type of data, method and fields
+            Console.WriteLine("FullName:{0}", S.FullName);  //What type of data, method and fields
+            Console.WriteLine("Namespace:{0}", S.Namespace); //What type of data, method and fields
+            Console.WriteLine("BaseType:{0}", S.BaseType);  //What type of data, method and fields
+
+            int i = 34;
+            System.Type type = i.GetType();
+            System.Console.WriteLine(type);
+
+            //example of uses of reflections to obtain Full name of the loaded assembly
+            System.Reflection.Assembly info = typeof(System.Int32).Assembly;
+            Console.WriteLine(info);
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,130 @@
+									QUEUE   
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Queue_Integer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<int> Myqueue = new Queue<int>(); //Queue object creation
+            Myqueue.Enqueue(1); //inserting elements in the queue
+            Myqueue.Enqueue(3);
+            Myqueue.Enqueue(5);
+            Myqueue.Enqueue(10);
+            Myqueue.Enqueue(9);
+            Myqueue.Enqueue(11);
+            Myqueue.Enqueue(13);
+            Myqueue.Enqueue(16);
+            Myqueue.Enqueue(17);
+            Myqueue.Enqueue(20);
+            foreach (int s in Myqueue)
+            {
+                Console.WriteLine("The elements in the queue are:{0}", s); //printing all the elements of the queue
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+            Console.WriteLine(Myqueue.Dequeue()); //deletes an element from the queue
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+
+
+            Myqueue.Enqueue(1); //inserting elements in the queue
+            Myqueue.Enqueue(3);
+            Myqueue.Enqueue(5);
+            Myqueue.Enqueue(7);
+            Myqueue.Enqueue(8);
+            Myqueue.Enqueue(11);
+            foreach (int s in Myqueue)
+            {
+                Console.WriteLine("The elements in the queue are:{0}", s); //printing all the elements of the queue
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+            Console.WriteLine(Myqueue.Dequeue()); //deletes an element from the queue
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+
+            Myqueue.Enqueue(1); //inserting elements in the queue
+            Myqueue.Enqueue(3);
+            Myqueue.Enqueue(10);
+            Myqueue.Enqueue(7);
+            Myqueue.Enqueue(9);
+            Myqueue.Enqueue(15);
+            foreach (int s in Myqueue)
+            {
+                Console.WriteLine("The elements in the queue are:{0}", s); //printing all the elements of the queue
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+            Console.WriteLine(Myqueue.Dequeue()); //deletes an element from the queue
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+
+
+
+            Myqueue.Enqueue(1); //inserting elements in the queue
+            Myqueue.Enqueue(3);
+            Myqueue.Enqueue(15);
+            Myqueue.Enqueue(7);
+            Myqueue.Enqueue(19);
+            Myqueue.Enqueue(20);
+            foreach (int s in Myqueue)
+            {
+                Console.WriteLine("The elements in the queue are:{0}", s); //printing all the elements of the queue
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+            Console.WriteLine(Myqueue.Dequeue()); //deletes an element from the queue
+            Console.WriteLine(Myqueue.Dequeue());
+            Console.WriteLine(Myqueue.Dequeue());
+
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+
+            Myqueue.Enqueue(15); //inserting elements in the queue
+            Myqueue.Enqueue(30);
+            Myqueue.Enqueue(55);
+            Myqueue.Enqueue(37);
+            Myqueue.Enqueue(19);
+            Myqueue.Enqueue(11);
+            foreach (int s in Myqueue)
+            {
+                Console.WriteLine("The elements in the queue are:{0}", s); //printing all the elements of the queue
+            }
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+            Console.WriteLine(Myqueue.Dequeue()); //deletes an element from the queue
+            Console.WriteLine(Myqueue.Dequeue());
+
+            Console.WriteLine("The peek element of the queue is:{0}", Myqueue.Peek()); //gives the topmost element of the queue
+            Console.WriteLine("The count in the queue is:{0}", Myqueue.Count()); //gives the count of the elements in the queue
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+}

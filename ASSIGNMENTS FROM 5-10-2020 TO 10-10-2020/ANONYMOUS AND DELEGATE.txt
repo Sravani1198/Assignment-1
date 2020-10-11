@@ -1,0 +1,65 @@
+			
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Windows_Forms_Assignment1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button(); //Reference to the button
+            b.Text = "Click me"; //Text implemented as "click me" on the button apperance
+            b.Size = new Size(100, 50); //size implemented for the button
+            b.Location = new Point(650, 300); //point located on the button created
+            this.Controls.Add(b); //controlling mechanism of button should go to center
+
+            //show the message
+            //Delegate with Anonymous method
+            b.Click += delegate (object sender1, EventArgs e1) //we are just passing parameters here
+            {
+                MessageBox.Show("Hello World");
+
+            };
+            b.Click += delegate (object sender1, EventArgs e2) //we are just passing parameters here
+            {
+
+                MessageBox.Show("Programming is fun");
+            };
+            b.Click += delegate (object sender1, EventArgs e3) //we are just passing parameters here
+            {
+                MessageBox.Show("This is Printing");
+
+            };
+            b.Click += delegate (object sender1, EventArgs e4) //we are just passing parameters here
+            {
+
+                MessageBox.Show("This is Printing again");
+            };
+            b.Click += delegate (object sender1, EventArgs e5) //we are just passing parameters here
+            {
+                MessageBox.Show("Yeyy! This is Crazy");
+
+            };
+            b.Click += delegate (object sender1, EventArgs e6) //we are just passing parameters here
+            {
+                MessageBox.Show("Yeyy! This is printing Crazy");
+
+            };
+            
+        }
+    }
+}
+			

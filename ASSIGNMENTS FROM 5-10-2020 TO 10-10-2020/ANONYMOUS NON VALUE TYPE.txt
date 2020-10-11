@@ -1,0 +1,40 @@
+				
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment1_nonvalue
+{
+    class Program
+    {
+        public delegate void addDelegate(int a, int b);
+        public delegate void GreetDelegate(string str);
+        static void Main(string[] args)
+        {
+            addDelegate ad = delegate (int a, int b)
+              {
+                  Console.WriteLine(a + b);
+              };
+            ad(5, 3);
+            addDelegate ad1 = delegate (int a, int b)
+            {
+                Console.WriteLine(a - b);
+            };
+            ad1(10, 3);
+            GreetDelegate gd = delegate (string str)
+              {
+                  Console.WriteLine("hai" + " " + str + " " + "city of destiny");
+              };
+            gd.Invoke("vizag");
+            GreetDelegate gd1 = delegate (string str)
+            {
+                Console.WriteLine("hello" + " " + str + " " + "Evening");
+            };
+            gd1.Invoke("good");
+            Console.ReadLine();
+        }
+    }
+}

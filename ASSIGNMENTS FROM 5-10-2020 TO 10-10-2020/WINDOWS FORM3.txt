@@ -1,0 +1,36 @@
+				
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsAppass2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button();//object or reference created to the button
+            b.Text = "Click here";//text implemented
+            b.Size = new Size(100, 50);//size maintain for the button (x ccoordinate, y coordinate)
+            b.Location = new Point(650, 300);//pointer located on the button created
+            this.Controls.Add(b);//controling mechanism of button should go to the center
+
+            b.Click += delegate (object sender1, EventArgs e1)
+            {
+                MessageBox.Show("Yeyy!! This is Crazy");
+            };
+        }
+    }
+}

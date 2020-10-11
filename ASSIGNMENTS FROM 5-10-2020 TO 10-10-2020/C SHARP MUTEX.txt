@@ -1,0 +1,42 @@
+				C SHARP MUTEX
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace C_sharp_Mutex
+{
+    class Mutex1
+    {
+        private static Mutex mutex = new Mutex();
+        static void Main(string[] args)
+        {
+            for(int i=1; i< 5; i++)
+            {
+                Thread obj = new Thread(mutexdemo);
+                obj.Name = "Thread" + i;
+                obj.Start();
+            }
+            Console.ReadLine();
+        }
+        static void mutexdemo()
+        {
+            Console.WriteLine(Thread.CurrentThread.Name + " Enters for processing");
+
+            //Blocks the current thread until the current WaitOne() method receives a signal
+
+            mutex.WaitOne();
+            Console.WriteLine("success1 " + Thread.CurrentThread.Name + " is processing now");
+            Thread.Sleep(1000);
+            Console.WriteLine("Exit " + Thread.CurrentThread.Name + " is completed its task");
+
+            //Call the release mutex method to unlock so that other threads that are trying to gain ownership
+
+            mutex.ReleaseMutex();
+        }
+    }
+}
