@@ -1,0 +1,135 @@
+							PROGRAM 1
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <title>My HTML page</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body id="body1">
+    <script type="text/javascript">
+        function f1() {
+            window.alert("hi you have clicked the button");
+        }
+        function changecontent() {
+            document.getElementById('hid').innerHTML = "hi my name is sramu";
+        }
+        function changeimagesize() {
+            document.getElementById('img1').width = '100';
+        }
+        function changethebackground() {
+            document.getElementById('body1').style.backgroundColor = 'red';
+        }
+        function hide() {
+            document.getElementById('hid2').style.display = 'none';
+        }
+    </script>
+    <h1 id="hid"> my name is sravani</h1>
+    <h2 id="hid2">welcome to jsc</h2>
+    <img src="download1.jpg" width="500" height="500" id="img1">
+    <button onclick="f1()">click me</button>
+    <button onclick="changecontent()">click me to change the h2 content</button>
+    <button onclick="changeimagesize()">click me to change the image size</button>
+    <button onclick="changethebackground()">click me to change the background</button>
+    <button onclick="hide()">click me</button>
+
+</body>
+</html>
+
+
+
+						PROGRAM 2
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getName() {
+            var a = 10;
+            var name = document.calculate.n1.value;
+            alert("your name is " + name);
+        }
+    </script>
+    <form action="" name="calculate" onsubmit="getName()">
+        <input type="text" name="n1"><br>
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>
+
+
+
+
+						PROGRAM 3
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Java script examples</title>
+    <script type="text/javascript">
+        var age = 22;
+        var name = "Sravani";
+        var salary = 30000;
+        document.write("Your age is  :" + age);
+        window.alert("Your name is :" + name);
+        document.writeln("Your salary is :" + salary);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+						PROGRAM 4
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript examples</title>
+    <script type="text/javascript">
+        var a = 1;
+        var b = 2;
+        var c = " hai";
+        var d = a + b + c;
+        document.write(d);
+        var age = 22;
+        if (age > 18) {
+            alert("You can Vote");
+        }
+        else {
+            alert("You cannot vote");
+        }
+        var a = 1;
+        document.write("value of a" + a);
+        b = ++a + a++ + ++a + a++;
+        document.write("value of b is" + b);
+    </script>
+           
+</head>
+<body>
+
+</body>
+</html>

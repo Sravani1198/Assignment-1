@@ -1,0 +1,72 @@
+						ASSIGNMENT 
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Table</title>
+</head>
+<body>
+    <script>
+        function multiply() {
+            table1 = parseInt(table.table1.value);
+            limit1 = parseInt(table.limit1.value);
+            for (limit1 = 1; limit1 < 5; limit1++) {
+                result = table1 * limit1;
+                window.alert("The multiplication table is :" + result);
+                table.result.value = result;
+            }
+        }
+    </script>
+    <form action="" name="table">
+        <input type="text" name="table1" /><br /><br />
+        <input type="text" name="limit1" /><br /><br />
+        <input type="button" value="multiply" onclick="multiply()" /><br />
+        <input type="text" name="result" /><br />
+
+    </form>
+    <script type="text/javascript">
+        function add() {
+            first = parseInt(Arithmetic_operations.first.value);
+            second = parseInt(Arithmetic_operations.second.value);
+            res = first + second;
+            window.alert("The result of the addition is :" + res);
+            Arithmetic_operations.res.value = res;
+        }
+        function mul() {
+            first = parseInt(Arithmetic_operations.first.value);
+            second = parseInt(Arithmetic_operations.second.value);
+            res = first * second;
+            window.alert("The result of the multiplication is :" + res);
+            Arithmetic_operations.res.value = res;
+        }
+        function sub() {
+            first = parseInt(Arithmetic_operations.first.value);
+            second = parseInt(Arithmetic_operations.second.value);
+            res = first - second;
+            window.alert("The result of the subtraction is :" + res);
+            Arithmetic_operations.res.value = res;
+        }
+        function div() {
+            first = parseInt(Arithmetic_operations.first.value);
+            second = parseInt(Arithmetic_operations.second.value);
+            res = first / second;
+            window.alert("The result of the division is :" + res);
+            Arithmetic_operations.res.value = res;
+        }
+    </script>
+    <form action="" name="Arithmetic_operations">
+        <input type="text" name="first" /><br />
+        <input type="text" name="second" /><br />
+        <input type="button" value="ADD" onclick="add()" />
+        <input type="button" value="MULTIPLICATION" onclick="mul()" />
+        <input type="button" value="SUBTRACTION" onclick="sub()" />
+        <input type="button" value="DIVISION" onclick="div()" />
+        <input type="text" name="res" />
+    </form>
+
+
+</body>
+</html>
