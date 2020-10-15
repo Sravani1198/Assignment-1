@@ -1,0 +1,200 @@
+					PROGRAM 1
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student scores</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var score = [65, 98, 87, 59, 77];
+        for (var i = 0; i < score.length; i++) {
+            document.write(score[i]+"<br>");
+        }
+        var least = score[0];
+        for (var i = 1; i < score.length; i++) {
+            if (least > score[i]) {
+                least = score[i];
+                document.write("least score is :" + least);
+            }
+        }
+        document.write("<br>");
+        var highest = score[0];
+        for (var i = 1; i < score.length; i++) {
+            if (highest < score[i]) {
+                highest = score[i];
+                document.write("highest score is:" + highest);
+            }
+        }
+        document.write("<br>");
+        var total = 0;
+        for (var i = 0; i < score.length; i++) {
+            total = total + score[i];
+        }
+        document.write("The total of the elements in an array are" + total + "<br>");
+        var average = total / score.length;
+        document.write("The average of the elements in an array are" + average + "<br>");
+
+        document.write("<br><br> Finding even odd");
+        var arr = [20, 30, 44, 50, 55];
+        var even = 0, odd = 0;
+        for (var i = 0; i < 5; i++) {
+            if (arr[i] % 2 == 0) {
+                even = even + arr[i];
+            }
+            else {
+                odd = odd + arr[i];
+            }
+        }
+        document.write("<br> Even sum is:" + even);
+        document.write("<br> Odd sum is:" + odd);
+    </script>
+
+</body>
+</html>
+
+
+						PROGRAM 2
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Dom practice</title>
+    <style>
+        .x1 {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function f1() {
+            alert("hai");
+            for (i = 0; i < 3; i++)
+                document.getElementsByTagName('hai')[i].innerHTML = "hai good morning";
+        }
+        function f2() {
+            alert("hello");
+            var x = document.getElementsByClassName("x1").length; //it gives the count (how many times h2 is accessed)
+            document.write("Length is:" + x);
+
+        }
+        function f3() {
+            alert("hey");
+            var y = document.getElementsByClassName("t1").length; //it gives the count
+            document.write("Length is:" + y);
+        }
+        function f4() {
+            alert("hey buddy! it's time to change the background color of header file ");
+            var s = document.getElementsByClassName("x1");
+            s[0].style.backgroundColor = "green";
+            s[1].style.backgroundColor = "red";
+            s[2].style.backgroundColor = "pink";
+        }
+
+    </script>
+    <h1>this is h1</h1>
+    <h1>this is h1</h1>
+    <h1>this is h1</h1>
+
+    <button onclick="f1()">click</button>
+
+    <h2 class="x1">this is h2</h2>
+    <h2 class="x1">this is h2</h2>
+    <h2 class="x1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <button onclick="f2()">click1</button>
+    <button onclick="f3()">click2</button>
+    <button onclick="f4()">click3</button>
+
+</body>
+</html>
+
+
+					PROGRAM 3
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz Example</title>
+</head>
+<body>
+    <form name="Quiz" id="Quiz">
+        <div>
+            <p>1.The fullform of "HTML" is________________</p>
+            <p><input type="radio" name="Q1" value="High Text Makeover Language" /> A.Hyper Text Makeover Language</p>
+            <p><input type="radio" name="Q1" value="Hyper Text Markup Language" /> B.Hyper Text Markup Language</p>
+            <p><input type="radio" name="Q1" value="High Tool Makeover Language" /> C.Hyper Tool Makeover Language</p>
+            <p><input type="radio" name="Q1" value="Hyper Tool Markup Language" /> D.Hyper Tool Markup Language</p>
+        </div>
+        <div>
+            <p>2.Which window object method is used to display a message in a dialog box?</p>
+            <p><input type="radio" name="Q2" value="Alert()" /> A.Alert()</p>
+            <p><input type="radio" name="Q2" value="Prompt()" /> B.Prompt()</p>
+            <p><input type="radio" name="Q2" value="Console.log()" /> C.Console.log()</p>
+            <p><input type="radio" name="Q2" value="Message()" /> D.Message()</p>
+        </div>
+        <div>
+            <p> 3.Which is the property that represents the content displayed in the window?</p>
+            <p><input type="radio" name="Q3" value="document" />A.document</p>
+            <p><input type="radio" name="Q3" value="window" /> B.window</p>
+            <p><input type="radio" name="Q3" value="content" /> C.content</p>
+            <p><input type="radio" name="Q3" value="frame" /> D.frame</p>
+        </div>
+        <div>
+            <p>4. The word document mainly refers to_____________</p>
+            <p><input type="radio" name="Q4" value="static information" />A. static information</p>
+            <p><input type="radio" name="Q4" value="dynamic information" /> B.dynamic information</p>
+            <p><input type="radio" name="Q4" value="both static and dynamic information" /> C.Both static and dynamic information</p>
+            <p><input type="radio" name="Q4" value="temporary information" /> D.temporary information</p>
+        </div>
+        <div>
+            <p> 5. Correct HTML tag for the largest heading is</p>
+            <p><input type="radio" name="Q5" value="heading" /> A.heading</p>
+            <p><input type="radio" name="Q5" value="h2" /> B.h2</p>
+            <p><input type="radio" name="Q5" value="h1" />C.h1</p>
+            <p><input type="radio" name="Q5" value="h6" /> D.h6</p>
+        </div>
+        <div>
+            <p>6.Which of the following tag is used to mark a beginning of paragraph?</p>
+            <p><input type="radio" name="Q6" value="TR" /> A.TR</p>
+            <p><input type="radio" name="Q6" value="br" /> B.br</p>
+            <p><input type="radio" name="Q6" value="TD" />C.TD</p>
+            <p><input type="radio" name="Q6" value="p" />D.p</p>
+        </div>
+
+        <input type="submit" name="" value="submit" id="button"onclick="check()"/>
+    </form>
+    <script type="text/javascript">
+        function check() {
+            var q1 = document.Quiz.Q1.value;
+            var q2 = document.Quiz.Q2.value;
+            var q3 = document.Quiz.Q3.value;
+            var q4 = document.Quiz.Q4.value;
+            var q5 = document.Quiz.Q5.value;
+            var q6 = document.Quiz.Q6.value;
+            var s = 0;
+            if (q1 == "Hyper Text Markup Language") { c++ }
+            if (q2 == "alert") { c++ }
+            if (q3 == "document") { c++ }
+            if (q4 == "static information") { c++ }
+            if (q5 == "h1") { c++ }
+            if (q6 == "p") { c++ }
+            var res = document.getElementById("res");
+            res.textContent = document.write(s);
+        }
+    </script>
+
+</body>
+</html>
