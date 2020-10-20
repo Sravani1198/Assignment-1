@@ -1,0 +1,146 @@
+						HTML ASSIGNMENT
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Html Assignment</title>
+</head>
+<body>
+    <h1 id="black">This is crazy</h1>
+    <h1 id="blue"> This is printing</h1>
+    <h1 id="brown">This is HTML assignment</h1>
+    <img id="bench" src="https://www.bing.com/images/search?view=detailV2&ccid=2puzOmxq&id=2F09B19EEDC0D0A0D18A3EDFA32048B16FBBA145&thid=OIP.2puzOmxq-_Cv2UZku0aDvQEsCo&mediaurl=https%3a%2f%2fi.ytimg.com%2fvi%2foArHSuwgWsk%2fmaxresdefault.jpg&exph=720&expw=1280&q=India+Nature&simid=608052826902365881&ck=3BCD57CE2CC393A2CA3AD593B4CF1479&selectedIndex=1&FORM=IRPRST&ajaxhist=0">
+    <button onclick="func1()">Click to change id1</button>
+    <button onclick="func2()">Click to change id2</button>
+    <button onclick="func3()">Click to change id3</button>
+    <button onclick="func4()">Click to change id4</button>
+    <script>
+        function func1() {
+            document.getElementById("black").innerHTML = "And it is fun";
+            alert("text1 is changed");
+        }
+        function func2() {
+            document.getElementById("blue").innerHTML = "And printing again";
+            alert("text2 is changed");
+        }
+        function func3() {
+            document.getElementById("brown").innerHTML = "Practice more";
+            alert("text3 is changed");
+        }
+        function func4() {
+            document.getElementById("bench").src ="https://www.bing.com/images/search?view=detailV2&ccid=amS9j6D5&id=8BF2C62E24B106AC928AA1FC27309A3E6DB01D89&thid=OIP.amS9j6D5ewqELM40Sw7t7AHaEs&mediaurl=https%3a%2f%2fblog.grabon.in%2fwp-content%2fuploads%2f2017%2f04%2fkate-point-15-incredible-natural-wonders-of-india.jpg&exph=1297&expw=2048&q=India+Nature&simid=608013394890655646&ck=6F8FD1A72DC8459D7A433788B8A01C03&selectedIndex=0&FORM=IRPRST&ajaxhist=0";
+            alert("image is changed");
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+								CSS ASSIGNMENT
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> CSS ASSIGNMENT</title>
+    <style>
+        .p{
+            height:35px;
+            width:200px;
+            color:orangered;
+            border:dashed;
+            padding:30px;
+            font-family:'Times New Roman', Times, serif;
+            font-weight:bold;
+            font-style:italic;
+        }
+        .q{
+            height: 35px;
+            width: 200px;
+            color : navy;
+            border: dashed;
+            padding: 30px;
+            font-family:Arial;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .r{
+            height: 35px;
+            width: 200px;
+            color: blue;
+            border: dashed;
+            padding: 30px;
+            font-family: Calibri;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .s{
+            height: 35px;
+            width: 200px;
+            color: yellow;
+            border: dashed;
+            padding: 30px;
+            font-family: Bahnschrift;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .t{
+            height: 35px;
+            width: 200px;
+            color: greenyellow;
+            border: dashed;
+            padding: 30px;
+            font-family: Dubai;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .u{
+            height: 35px;
+            width: 200px;
+            color: blueviolet;
+            border: dashed;
+            padding: 30px;
+            font-family: cursive;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="btn1">Hello World!!!</h1>
+    <h2 id="btn2">Programming is fun</h2>
+    <h3 id="btn3">This is crazy</h3>
+    <h4 id="btn4">This is printing</h4>
+    <h5 id="btn5">This is printing again</h5>
+    <h6 id="btn6">CSS is very easy to learn</h6>
+
+
+    <button id="blue" onclick="btn()">click me</button>
+    <p> After performing the required operations the button gets disabled</p>
+
+    <script>
+        function btn() {
+            document.getElementById("blue").disabled = true;
+            alert("The button is disabled");
+            document.getElementById("btn1").className = "p";
+            document.getElementById("btn2").className = "q";
+            document.getElementById("btn3").className = "r";
+            document.getElementById("btn4").className = "s";
+            document.getElementById("btn5").className = "t";
+            document.getElementById("btn6").className = "u";
+        }
+    </script>
+    <p> After performing the required operations the button gets disabled</p>
+</body>
+</html>
