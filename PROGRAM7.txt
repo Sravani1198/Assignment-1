@@ -1,0 +1,169 @@
+				PROGRAM1
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Html  Page</title>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown(2000);
+            });
+        });
+    </script>
+    <style>
+        #panel, #flip {
+            background-color:springgreen;
+            text-align:center;
+            padding:10px;
+        }
+        #panel{
+            text-align:center;
+            padding:50px;
+            display:none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#flip1").click(function () {
+                $("#panel1").slideDown();
+            });
+        });
+    </script>
+    <style>
+        #panel1, #flip1 {
+            background-color:forestgreen;
+            text-align:center;
+            padding:10px;
+        }
+        #panel1{
+            text-align:center;
+            padding:50px;
+            display:none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#flip2").click(function () {
+                $("#panel2").slideUp();
+            });
+        });
+    </script>
+    <style>
+        #panel2, #flip2 {
+            background-color:tomato;
+            text-align:center;
+            padding:10px;
+        }
+        #panel2 {
+            text-align:center;
+            padding:50px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#flip3").click(function () {
+                $("panel3").slideToggle();
+            });
+        });
+    </script>
+    <style>
+        #panel3, #flip3 {
+            background-color: lightcoral;
+            text-align: center;
+            padding: 10px;
+        }
+        #panel3 {
+            text-align: center;
+            padding: 50px;
+            display:none;
+        }
+    </style>
+        
+    
+</head>
+<body>
+    <div id="flip"> click to slide down </div>
+    <div id="panel"> Programming is fun </div> <br />
+    <div id="flip1"> this is another example of slide down </div>
+    <div id="panel1"> this is another example of panel1 </div> <br/>
+    <div id="flip2"> click to slide up </div>
+    <div id="panel2"> this is another example of panel </div><br/>
+    <div id="flip3"> click to toggle slide up and slide down </div>
+    <div id="panel3"> this is another example of panel </div>
+
+</body>
+</html>
+
+
+
+
+							PROGRAMM2
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideUp();
+            });
+        });
+    </script>
+    <style>
+        #panel, #flip {
+            background-color: springgreen;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="flip"> click to slide down </div>
+    <div id="panel"> Programming is fun </div>
+</body>
+</html>
+
+
+
+						PROGRAM3
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("img").animate({
+                        left: 'toggle',
+                        width: 'toggle',
+                        height: 'toggle'
+                    });
+                });
+            });
+    </script>
+    
+</head>
+<body>
+    <img src="download1.jpg"/>
+    <button> Click to check </button>
+</body>
+</html>
