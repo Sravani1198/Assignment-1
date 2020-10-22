@@ -1,0 +1,49 @@
+						WEBPAGE1
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="MyfirsASPtwebsite.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Web Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <% Response.Write("Hello World!"); %> <br />
+            <% Response.Write("Programming is fun"); %> <br />
+            <h1> This is a website page</h1> <br />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+						WEBPAGE2
+
+
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="MyfirsASPtwebsite.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Sample Page of Web Project Template </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <% Response.Write ("My first ASP website page created in IIS express"); %> <br />
+            <%Response.Write("Hello World!!"); %> <br />
+            <%Response.Write("This is an example of website project template"); %>
+        </div>
+        <p> Webpages are called as WebForms in ASP.Net</p>
+    </form>
+</body>
+</html>
