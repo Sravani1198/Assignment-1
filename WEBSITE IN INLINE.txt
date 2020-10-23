@@ -1,0 +1,27 @@
+						WEBSITE IN INLINE
+
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    protected void btn1_Click(object sender, EventArgs e)
+    {
+        Response.Write("Button is working fine");
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> WebSite1 </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="btn1" runat="server" Text="Click me" ForeColor="YellowGreen" OnClick="btn1_Click" />
+        </div>
+    </form>
+</body>
+</html>

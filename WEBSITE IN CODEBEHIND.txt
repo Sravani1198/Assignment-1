@@ -1,0 +1,49 @@
+				    WEBSITE IN CODE BEHIND
+
+=========================================================================================================================
+
+				               CodeBehind.aspx
+=========================================================================================================================
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CodeBehind.aspx.cs" Inherits="CodeBehind" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Website in code behind </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="button1" runat="server" Text="click me once" ForeColor="Violet" OnClick="button1_Click" />
+        </div>
+    </form>
+</body>
+</html>
+
+=========================================================================================================================
+					CodeBehind.aspx.cs
+=========================================================================================================================
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class CodeBehind : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("The button is working fine");
+    }
+}
+

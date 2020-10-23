@@ -1,0 +1,60 @@
+					WEB APP1 (BUTTON AND TEXTBOX)
+
+      
+======================================================================================================================
+
+					WebApp1.aspx
+
+
+======================================================================================================================
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="WebApp1.aspx.cs" Inherits="WebApp1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> My Web Application </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <input type="text" name="Textbox1" />
+            <button> Submit </button>
+
+
+            <br />
+            <asp:TextBox ID="TextBox2" runat="server" />
+            <asp:Button ID="button1" runat="server" Text="SUBMIT" OnClick="button1_Click" />
+        </div>
+    </form>
+</body>
+</html>
+
+==================================================================================================================
+					WebApp1.aspx.cs
+==================================================================================================================
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class WebApp1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void button1_Click(object sender, EventArgs e)
+    {
+        string s = "Hai" + " " + TextBox2.Text + " " + " Good Afternoon";
+        Response.Write(s);
+    }
+}
+
+
+
+
