@@ -1,0 +1,83 @@
+					Assignment.aspx
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DtaList1.aspx.cs" Inherits="Assign_DataList.DtaList1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Assignment on DataList </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <p> The DataList data of the DataTable </p>
+        <div>
+            <asp:DataList ID="DataList1" runat="server">
+                <ItemTemplate>
+                    <asp:Table ID="Table1" runat="server" CellPadding="2" CellSpacing="0" Border="1" BorderStyle="Dashed" style="width:250px; height:100px;background-color:lightgreen" />
+                    <tr>
+                        <td style="color:sienna">
+                            <strong> FirstName : </strong> <span> <%#Eval("FirstName :") %></span><br />
+                            <strong> LastName : </strong> <span> <%# Eval("LastName :") %></span><br />
+                            <strong> Designation : </strong> <span> <%# Eval("Designation :") %></span><br />
+                            <strong> Location : </strong> <span> <%# Eval("Location :") %></span><br />
+                            <strong> Country : </strong> <span> <%# Eval("Country :") %></span><br />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+						Assignment.aspx.cs
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace Assign_DataList
+{
+    public partial class DtaList1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            DataTable Table = new DataTable(); //Created an instance
+            Table.Columns.Add("FirstName :");
+            Table.Columns.Add("LastName :");
+            Table.Columns.Add("Designation :");
+            Table.Columns.Add("Location :");
+            Table.Columns.Add("Country :");
+
+            Table.Rows.Add("Sravani", "Kumari", "ProjectLeader", "Visakhapatnam", "India");
+            Table.Rows.Add("Chandhini", "Divya", "HR", "Bangalore", "India");
+            Table.Rows.Add("Potnuru", "Rohit", "Manager", "Hyderabad", "India");
+            Table.Rows.Add("Voleti", "Prathyusha", "ITHead", "Kolkata", "India");
+            Table.Rows.Add("Reddy", "Nikitha", "Sales", "Mumbai", "India");
+            Table.Rows.Add("Mukhi", "KumarRaja", "MarketingOfficer", "Karnataka", "India");
+            Table.Rows.Add("Chowdary", "Anudeep", "FinanceOfficer", "Vijayawada", "India");
+            Table.Rows.Add("Abdul", "Riyaz", "AccountingManager", "Noida", "India");
+            Table.Rows.Add("Shaik", "Firdos", "TechnicalLead", "Chennai", "India");
+            Table.Rows.Add("Sarvasiddi", "Ramya", "ExecutiveOfficer", "Ahmedabad", "India");
+
+
+            DataList1.DataSource = Table;
+            DataList1.DataBind();
+        }
+    }
+}
