@@ -1,0 +1,165 @@
+					Cookie Collection
+
+
+					Cookie Collection.aspx
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Cookie Collection.aspx.cs" Inherits="Cookie_Collection" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Cookie Collection </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div>
+        <asp:Label ID="Label1" runat="server" Text="Select Brand Preference" />
+            <br />
+            <br />
+        <asp:CheckBox ID="CheckBox1" runat="server" Text="iPhone"  />
+            <br />
+        <asp:CheckBox ID="CheckBox2" runat="server" Text="Samsung" />
+            <br />
+        <asp:CheckBox ID="CheckBox3" runat="server" Text="Redmi" />
+            <br />
+        <asp:CheckBox ID="CheckBox4" runat="server" Text="Lenovo" />
+            <br />
+        <asp:CheckBox ID="CheckBox5" runat="server" Text="Realme"  />
+            <br />
+        <asp:CheckBox ID="CheckBox6" runat="server" Text="Nokia"  />
+            <br />
+        <asp:CheckBox ID="CheckBox7" runat="server" Text="Oppo"  />
+            <br />
+        <asp:CheckBox ID="CheckBox8" runat="server" Text="Vivo"  />
+            <br />
+        <asp:CheckBox ID="CheckBox9" runat="server" Text="Micromax"  />
+            <br />
+        <asp:CheckBox ID="CheckBox10" runat="server" Text="Cellkon"  />
+            <br />
+            <br />
+
+        <asp:Button ID="Button1" runat="server" Text="Checkon" OnClick="Button1_Click"  />
+        </div>
+    </form>
+     <p>
+            <asp:Label ID="Label2" runat="server" />
+        </p>
+</body>
+</html>
+
+
+
+
+
+
+						Cookie Collection.aspx.cs
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Cookie_Collection : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //Setting Expiry date and time for the cookies
+        Response.Cookies["computer"].Expires = DateTime.Now.AddDays(-1);
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label2.Text = " ";
+
+        //Adding Cookies
+
+        if (CheckBox1.Checked)
+        {
+            Response.Cookies["computer"]["iPhone"] = "You have checked for iPhone and Cookie Triggered";
+        }
+        if (CheckBox2.Checked)
+        {
+            Response.Cookies["computer"]["Samsung"] = "You have checked for Samsung and Cookie Triggered";
+        }
+        if (CheckBox3.Checked)
+        {
+            Response.Cookies["computer"]["Redmi"] = "You have checked for Redmi and Cookie Triggered";
+        }
+        if (CheckBox4.Checked)
+        {
+            Response.Cookies["computer"]["Lenovo"] = "You have checked for Lenovo and Cookie Triggered";
+        }
+        if (CheckBox5.Checked)
+        {
+            Response.Cookies["computer"]["Realme"] = "You have checked for Realme and Cookie Triggered";
+        }
+        if (CheckBox6.Checked)
+        {
+            Response.Cookies["computer"]["Nokia"] = "You have checked for Nokia and Cookie Triggered";
+        }
+        if (CheckBox7.Checked)
+        {
+            Response.Cookies["computer"]["Oppo"] = "You have checked for Oppo and Cookie Triggered";
+        }
+        if (CheckBox8.Checked)
+        {
+            Response.Cookies["computer"]["Vivo"] = "You have checked for Vivo and Cookie Triggered";
+        }
+        if (CheckBox9.Checked)
+        {
+            Response.Cookies["computer"]["Micromax"] = "You have checked for Micromax and Cookie Triggered";
+        }
+        if (CheckBox10.Checked)
+        {
+            Response.Cookies["computer"]["Cellkon"] = "You have checked for Cellkon and Cookie Triggered";
+        }
+
+        //======Fetching Code=======//
+
+        if (Request.Cookies["computer"].Values.ToString()!=null)
+        {
+            if (Request.Cookies["computer"]["iPhone"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["iPhone"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Samsung"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Samsung"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Redmi"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Redmi"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Lenovo"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Lenovo"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Realme"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Realme"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Nokia"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Nokia"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Oppo"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Oppo"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Vivo"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Vivo"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Micromax"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Micromax"] + " " + " ";
+
+            if (Request.Cookies["computer"]["Cellkon"] != null)
+                Label2.Text = Label2.Text + Response.Cookies["computer"]["Cellkon"] + " " + " ";
+        }
+        else
+        {
+            Label2.Text = "Please select your choice";
+            Response.Cookies["computer"].Expires = DateTime.Now.AddDays(-1);
+        }
+
+    } 
+}

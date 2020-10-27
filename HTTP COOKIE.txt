@@ -1,0 +1,119 @@
+					HTTTP COOKIE
+
+
+					Cookie1.aspx
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Cookie1.aspx.cs" Inherits="Cookie1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Cookies in ASP </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label6" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label7" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label8" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label9" runat="server" Text="Label" />
+            <br />
+            <asp:Label ID="Label10" runat="server" Text="Label" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+						Cookie1.aspx.csusing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Cookie1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //======Creating Cookie======//
+        //Creating HttpCookie instancce by specifying the name "student"
+        HttpCookie cookie = new HttpCookie("student");
+        HttpCookie cookie1 = new HttpCookie("name");
+        HttpCookie cookie2 = new HttpCookie("name1");
+        HttpCookie cookie3 = new HttpCookie("name2");
+        HttpCookie cookie4 = new HttpCookie("name3");
+        HttpCookie cookie5 = new HttpCookie("name4");
+        HttpCookie cookie6 = new HttpCookie("name5");
+        HttpCookie cookie7 = new HttpCookie("name6");
+        HttpCookie cookie8 = new HttpCookie("name7");
+        HttpCookie cookie9 = new HttpCookie("name8");
+        //Assign value to the created cookie
+        cookie.Value = "Sravani";
+        cookie1.Value = "Sramu";
+        cookie2.Value = "Sravs";
+        cookie3.Value = "Savithini";
+        cookie4.Value = "Chandhu";
+        cookie5.Value = "Ramya";
+        cookie6.Value = "Prathyu";
+        cookie7.Value = "Firdos";
+        cookie8.Value = "Sanjana";
+        cookie9.Value = "Divya";
+        //Add cookie to the response instance
+        Response.Cookies.Add(cookie);
+        Response.Cookies.Add(cookie1);
+        Response.Cookies.Add(cookie2);
+        Response.Cookies.Add(cookie3);
+        Response.Cookies.Add(cookie4);
+        Response.Cookies.Add(cookie5);
+        Response.Cookies.Add(cookie6);
+        Response.Cookies.Add(cookie7);
+        Response.Cookies.Add(cookie8);
+        Response.Cookies.Add(cookie9);
+        //=====Fetch the Cookie Created======//
+        var Cookie_Value = Response.Cookies["student"].Value;
+        var Cookie1_Value = Response.Cookies["name"].Value;
+        var Cookie2_Value = Response.Cookies["name1"].Value;
+        var Cookie3_Value = Response.Cookies["name2"].Value;
+        var Cookie4_Value = Response.Cookies["name3"].Value;
+        var Cookie5_Value = Response.Cookies["name4"].Value;
+        var Cookie6_Value = Response.Cookies["name5"].Value;
+        var Cookie7_Value = Response.Cookies["name6"].Value;
+        var Cookie8_Value = Response.Cookies["name7"].Value;
+        var Cookie9_Value = Response.Cookies["name8"].Value;
+        Label1.Text = Cookie_Value;
+        Label2.Text = Cookie1_Value;
+        Label3.Text = Cookie2_Value;
+        Label4.Text = Cookie3_Value;
+        Label5.Text = Cookie4_Value;
+        Label6.Text = Cookie5_Value;
+        Label7.Text = Cookie6_Value;
+        Label8.Text = Cookie7_Value;
+        Label9.Text = Cookie8_Value;
+        Label10.Text = Cookie9_Value;
+    }
+}
+
+
+
+
+
