@@ -1,0 +1,54 @@
+				              Dispose.aspx
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dispose.aspx.cs" Inherits="commands.dispose" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:LinkButton ID="linkbutton1" runat="server" OnDisposed="linkbutton1_Disposed" OnClick="linkbutton1_Disposed" >DXC Training on .Net Course ></asp:LinkButton><br />
+			
+
+        </div>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </form>
+</body>
+</html>
+
+
+
+
+
+						Dispose.aspx.cs
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace commands
+{
+    public partial class dispose : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void linkbutton1_Disposed(object sender, EventArgs e)
+        {
+            Label1.Text = "ASP .Net Programming";
+        }
+    }
+}
