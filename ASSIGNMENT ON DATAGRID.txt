@@ -1,0 +1,97 @@
+					ASSIGNMENT ON DATAGRID
+
+
+					assignment1.aspx
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Assignment1.aspx.cs" Inherits="DataGridView1.Assignment1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <p> This is the DataGrid data from the DataTable Record </p>
+            <asp:DataGrid ID="DataGrid1" runat="server" />
+            <br />
+            <br />
+            <asp:DataGrid ID="DataGrid2" runat="server" />
+            <br />
+            <br />
+            <asp:DataGrid ID="DataGrid3" runat="server" />
+            <br />
+            <br />
+            <asp:DataGrid ID="DataGrid4" runat="server" />
+            <br />
+            <br />
+            <asp:DataGrid ID="DataGrid5" runat="server" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+					assignment1.aspx.cs
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace DataGridView1
+{
+    public partial class Assignment1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //Establishing the connection to the database
+
+            using (SqlConnection connect = new SqlConnection("server=DESKTOP-F6E1R90; database=Student; integrated security=SSPI"))
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select * from students1", connect);
+                SqlDataAdapter sda1 = new SqlDataAdapter("select * from employee1", connect);
+                SqlDataAdapter sda2 = new SqlDataAdapter("select * from railwaysystem", connect);
+                SqlDataAdapter sda3 = new SqlDataAdapter("select * from IndianCricketTeam", connect);
+                SqlDataAdapter sda4 = new SqlDataAdapter("select * from BankSector", connect);
+
+                DataSet ds = new DataSet();
+                DataSet ds1 = new DataSet();
+                DataSet ds2 = new DataSet();
+                DataSet ds3 = new DataSet();
+                DataSet ds4 = new DataSet();
+
+                sda.Fill(ds);
+                sda1.Fill(ds1);
+                sda2.Fill(ds2);
+                sda3.Fill(ds3);
+                sda4.Fill(ds4);
+
+                DataGrid1.DataSource = ds;
+                DataGrid2.DataSource = ds1;
+                DataGrid3.DataSource = ds2;
+                DataGrid4.DataSource = ds3;
+                DataGrid5.DataSource = ds4;
+
+                DataGrid1.DataBind();
+                DataGrid2.DataBind();
+                DataGrid3.DataBind();
+                DataGrid4.DataBind();
+                DataGrid5.DataBind();
+            }
+        }
+    }
+}
