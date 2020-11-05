@@ -1,0 +1,98 @@
+let one = 1;
+let two = 2;
+let three = 3;
+let four = 4;
+
+let number = 0o377 //Octal number
+
+
+let identifier: number = 1000;
+let first: number = 12.0;
+let second: string = "Sravani";
+
+let EmployeeName: string = "Sravani S";
+let Designation: string = "Employee";
+let Pincode: number = 530008;
+console.log(first); console.log(second); console.log(EmployeeName); console.log(Designation);
+
+let examdone: boolean = false;
+//let < function name> (): <datatype = void > { }
+
+function SayHello(): void {
+    console.log("This is an example of void datatype");
+    console.log("This is a function example also");
+}
+
+//assigning the value to the datatype we must use only undefined or null
+let temporaryNumber: void = undefined;
+let temporaryNumBer: void = null;
+
+//Any-datatype:
+let value: any = 'Hai';
+let valu: any = 1000;
+let val: any = 1234.12345;
+let va: any = "12345Sramu";
+
+//Function example //Annotations
+function printdata(a: any, b: any) {
+    return a + b;
+}
+let result: any;
+result = printdata("Hello","good morning");
+result = printdata(2, 3);
+
+//Arrays in Typescript
+
+var List: number[] = [1, 2, 3, 4, 5, 6, 7];
+console.log(number);
+
+var List: Array<number> = [1, 2, 3, 4, 5, 6, 7];
+console.log(number);
+   
+//Tuple-datatype
+var a: ["Sramu", "Trainee", 100, 9880, "DXC", "Bangalore"];
+var b: [1, 2, 3];
+let v: ["Bangalore", "Vizag", "Hyderabad", "Kolkata"];
+console.log(a);
+console.log(b);
+console.log(v);
+
+//Interface
+interface Calculation {
+    Addition(first:100,second:200)
+}
+let calc: Calculation = {
+    Addition(first: number, second: number) {
+        return first + second;
+    }
+}
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+function printname(person: Person) {
+    return "Hello" + " " + person.firstname + person.lastname;
+}
+let user = { firstname: "Sravani", lastname: "Kumari" }
+console.log(printname(user));
+
+//Class
+class student {
+    RollNo: number;
+    Name: string;
+    constructor(RollNo: number, Name: string) {
+        this.RollNo = RollNo;
+        this.Name = Name;
+    }
+    
+}
+
+//Enum
+enum Color { Red, Green, Blue };
+let Colour: Color;
+Colour = Color.Green;
+Colour = Color.Blue;
+Colour = Color.Red;
+console.log(Color[0], Color[2], Color[3]);
+
+
