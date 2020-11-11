@@ -1,0 +1,90 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1> Hello! this is Index View </h1>
+    </div>
+    <div>
+        <h1> this is an example of single line expression</h1>
+        <h2> This is a razor syntax view and implemented single line expression</h2>
+        <label> Todays's Date and Time is: @DateTime.Now</label> <br/>
+        <label> Addition of 10 and 20 is: @(10 + 20)</label><br/>
+        <label> Subtraction of 10 and 20 is: @(10 - 20)</label><br/>
+        <label> Multiplication of 10 and 20  is: @(10 * 20)</label><br/>
+        <label> Division of 10 and 20 is: @(10 / 20)</label><br/>
+        <label> Modulus of 10 and 20 is:@(10 % 20)</label><br/>
+    </div>
+    <p> This is an example of Multi Line Expression</p>
+    <div>
+        @{ 
+            var a = 10;
+            var b = 10;
+            var c = a + b;
+            var Name = "Sravani";
+            var job = "Software Engineer";
+            var ColorsList = new List<string>() { "White", "Red", "Blue", "Orange" };
+            var NumList = new List<int>() { 10, 30, 1, 24, 22, 2 };
+        }
+        </div>
+    <div>
+  
+            <label> addition of 10 and 10 is : @(c)</label><br/>
+            <label> My name is: @Name</label><br/>
+            <label> My job is:@job</label><br/>
+            
+        @{ 
+            foreach(var i in ColorsList)
+            {
+                <label> @(i)</label><br/>
+            }
+        }
+        @{ 
+            foreach(var j in NumList)
+            {
+                <label> @(j)</label><br/>
+            }
+        }
+        
+    </div>
+    @*<div>
+        <h1> Escape sequence in Razor view engine </h1>
+        <div> sravani1198@gmail.com </div>
+        <label> Email address is: @@sravani1198@gmail.com</label>
+    </div>*@
+    <div>
+        @{ 
+            var variable = 15;
+            var Is_true = true;
+        }
+    </div>
+    <div>
+        @if(variable%2==0)
+        {
+            <h2> This is If block </h2>
+            <h3> The number is even </h3>
+        } else if(variable%2!=0)
+        {
+            <h3> This number is odd</h3>
+        }
+        else
+        {
+            <h2> This is else block</h2>
+        }
+    </div>
+    <div>
+        <h4> This is ternary operator </h4><br/>
+        @(variable==3 ? "number is equal to 3" : "number is not equal to 3")<br/>
+        @(Is_true ==true ? "condition is true" : "condition is not true")
+    </div>
+</body>
+</html>
