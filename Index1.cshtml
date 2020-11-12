@@ -1,0 +1,26 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h3> using ViewData, data's are transferred from the controller to view </h3>
+
+        @ViewData["Username"]
+        <br/>
+        @ViewData["Check"]
+        <br/>
+        @ViewData["AS"]
+        <br/>
+        @ViewData["LastName"]
+    </div>
+</body>
+</html>
