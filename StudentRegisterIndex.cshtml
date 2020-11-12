@@ -1,0 +1,81 @@
+@using StudentRegisterAssign.Models
+@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+
+    <style>
+        .container {
+            margin:150px auto;
+            width:400px;
+            height:400px;
+            font-family:'Times New Roman';
+            font-size:large;
+            background-color:blanchedalmond;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm("Student Registration"))
+        {
+            <label> Name: @Html.TextBoxFor(x => x.Name)</label>
+            <br />
+            <br />
+            <label> Password: @Html.PasswordFor(x => x.Password)</label>
+            <br />
+            <br />
+            <label> Gender:</label>
+            <label> Male: @Html.RadioButton("Gender", "Male", new { id = "Male" })</label>
+            <label> Female: @Html.RadioButton("Gender", "Fermale", new { id = "Female" })</label>
+            <br />
+            <br />
+            <label> Address: @Html.TextAreaFor(x => x.Address)</label> <br />
+            <br />
+            <label> Hobbies: </label><br />
+            <label> Singing @Html.CheckBox("Singing")</label> <br />
+            <label> Dancing @Html.CheckBox("Dancing")</label> <br />
+            <label> Reading Books @Html.CheckBox("Reading Books")</label> <br />
+            <label> Listening Music @Html.CheckBox("Listening Music")</label> <br />
+            <br />
+            <br />
+            <label>
+                Skills: @Html.DropDownList("Skills",new List<SelectListItem>
+ { new SelectListItem{Text="Choose your Skills"},
+    new SelectListItem{Text="IOt", Value="1"},
+    new SelectListItem{Text="AI" ,Value="2"},
+    new SelectListItem{Text="Java", Value="3"}
+       })
+
+
+            </label>
+            <br />
+            <br />
+
+            <label>
+                Courses: @Html.DropDownList("Courses",new List<SelectListItem>
+    { new SelectListItem{Text="Select the Courses"},
+       new SelectListItem{Text="C Programming", Value="1"},
+       new SelectListItem{Text=".NET Course" ,Value="2"},
+       new SelectListItem{Text="C++", Value="3"}
+          })
+
+
+            </label>
+            <input type="submit" value="Register" />
+        }
+    </div>
+</body>
+</html>
+
+
+
